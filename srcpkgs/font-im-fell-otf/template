@@ -1,0 +1,22 @@
+# Template file for 'font-im-fell-otf'
+pkgname=font-im-fell-otf
+version=0.7.0
+revision=1
+archs=noarch
+create_wrksrc=yes
+hostmakedepends="unzip"
+depends="font-util"
+short_desc="Digitized versions of the 17th Fell Types"
+maintainer="Benjamin Slade <slade@lambda-y.net>"
+license="OFL-1.1"
+homepage="https://iginomarini.com/fell/"
+distfiles="https://iginomarini.com/fell/wp-content/uploads/IMFellTypesClass.zip"
+checksum="b65189a8c165dafa5ba979092ebe967e0ad86a4d584b203eee40e16d010f5308"
+
+font_dirs="/usr/share/fonts/OTF"
+
+do_install() {
+	vmkdir usr/share/fonts/OTF
+	vcopy *.otf usr/share/fonts/OTF
+	vlicense "Fell Types License.txt" License.md
+}
